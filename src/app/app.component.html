@@ -1,13 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  {{title}}
-</body>
-</html>
+<nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/login">Login</a>
+  <a routerLink="/user">User</a>
+  <a routerLink="/employee">Employee</a>
+  <a routerLink="/admin">Admin</a>
+  <a (click)="logout()">Logout</a>
+</nav>
+<br>
+<router-outlet></router-outlet>
