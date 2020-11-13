@@ -1,0 +1,11 @@
+<h2>Login Form</h2>
+<p>U: user@email.com P: password</p>
+<p>U: employee@email.com P: password</p>
+<p>U: admin@email.com P: password</p>
+<form (ngSubmit)="login()">
+  <input name="email" type="email" [(ngModel)]="loginData.email">
+  <br>
+  <input name="password" type="password" [(ngModel)]="loginData.password">
+  <br>
+  <button type="submit" [disabled]="isLoading">{{isLoading ? 'Loading...' : 'Login!'}}</button>
+</form>

@@ -1,10 +1,10 @@
 <nav>
   <a routerLink="/">Home</a>
-  <a routerLink="/login">Login</a>
-  <a routerLink="/user">User</a>
-  <a routerLink="/employee">Employee</a>
-  <a routerLink="/admin">Admin</a>
-  <a (click)="logout()">Logout</a>
+  <a *ngIf="!authService.isAuthenticated()" routerLink="/login">Login</a>
+  <a *ngIf="authService.isUser()" routerLink="/user">User</a>
+  <a *ngIf="authService.isEmployee()" routerLink="/employee">Employee</a>
+  <a *ngIf="authService.isAdmin()" routerLink="/admin">Admin</a>
+  <a *ngIf="authService.isAuthenticated()" (click)="logout()">Logout</a>
 </nav>
 <br>
 <router-outlet></router-outlet>
