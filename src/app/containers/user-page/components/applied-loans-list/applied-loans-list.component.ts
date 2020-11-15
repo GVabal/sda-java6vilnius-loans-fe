@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {LoanApplication} from '../../../../interfaces/LoanApplication';
+import {UserLoanApplication} from '../../../../interfaces/UserLoanApplication';
 import {LoanApplicationService} from '../../../../services/loan-application.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {LoanApplicationService} from '../../../../services/loan-application.serv
 })
 export class AppliedLoansListComponent implements OnInit {
 
-  appliedLoans: LoanApplication[] = [];
+  appliedLoans: UserLoanApplication[] = [];
 
   constructor(private loanApplicationService: LoanApplicationService) { }
 
@@ -18,7 +18,7 @@ export class AppliedLoansListComponent implements OnInit {
   }
 
   getData(): void {
-    this.loanApplicationService.getAppliedLoans().subscribe(data => {
+    this.loanApplicationService.getAppliedLoansForCustomer().subscribe(data => {
       this.appliedLoans = data;
     });
   }

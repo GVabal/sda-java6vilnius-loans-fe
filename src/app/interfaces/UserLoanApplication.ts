@@ -1,6 +1,6 @@
 import {ApplicationStatus} from '../enums/ApplicationStatus';
 
-export interface LoanApplication {
+export interface UserLoanApplication {
   amount: number;
   status: ApplicationStatus;
 }

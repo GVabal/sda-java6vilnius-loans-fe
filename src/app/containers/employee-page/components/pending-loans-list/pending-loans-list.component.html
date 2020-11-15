@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Name</th>
+    <th>Bank Account</th>
+  </tr>
+  <tr *ngFor="let loan of pendingLoans">
+    <td>{{loan.amount}}</td>
+    <td>{{loan.customer.firstName}} {{loan.customer.lastName}}</td>
+    <td>{{loan.customer.bankAccountNumber}}</td>
+  </tr>
+</table>

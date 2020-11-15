@@ -15,6 +15,7 @@ import { NotFoundPageComponent } from './containers/not-found-page/not-found-pag
 import { AppliedLoansListComponent } from './containers/user-page/components/applied-loans-list/applied-loans-list.component';
 import {ErrorInterceptor} from './interceptors/ErrorInterceptor';
 import {JwtInterceptor} from './interceptors/JwtInterceptor';
+import { PendingLoansListComponent } from './containers/employee-page/components/pending-loans-list/pending-loans-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {JwtInterceptor} from './interceptors/JwtInterceptor';
     HomePageComponent,
     LoginFormComponent,
     NotFoundPageComponent,
-    AppliedLoansListComponent
+    AppliedLoansListComponent,
+    PendingLoansListComponent
   ],
   imports: [
     BrowserModule,
