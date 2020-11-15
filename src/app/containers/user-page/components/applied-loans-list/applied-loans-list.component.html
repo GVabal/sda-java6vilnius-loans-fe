@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let loan of appliedLoans">
+    <td>{{loan.amount}}</td>
+    <td>{{loan.status}}</td>
+  </tr>
+</table>

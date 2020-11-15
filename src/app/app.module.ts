@@ -10,8 +10,11 @@ import { EmployeePageComponent } from './containers/employee-page/employee-page.
 import { HomePageComponent } from './containers/home-page/home-page.component';
 import { LoginFormComponent } from './containers/login-page/components/login-form/login-form.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { NotFoundPageComponent } from './containers/not-found-page/not-found-page.component';
+import { AppliedLoansListComponent } from './containers/user-page/components/applied-loans-list/applied-loans-list.component';
+import {ErrorInterceptor} from './interceptors/ErrorInterceptor';
+import {JwtInterceptor} from './interceptors/JwtInterceptor';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { NotFoundPageComponent } from './containers/not-found-page/not-found-pag
     EmployeePageComponent,
     HomePageComponent,
     LoginFormComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    AppliedLoansListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,10 @@ import { NotFoundPageComponent } from './containers/not-found-page/not-found-pag
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
