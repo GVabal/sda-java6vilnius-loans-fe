@@ -18,7 +18,7 @@ export class AppliedLoansListComponent implements OnInit {
   }
 
   getData(): void {
-    this.loanApplicationService.getAppliedLoansForCustomer().subscribe(data => {
+    this.loanApplicationService.getAppliedLoans().subscribe(data => {
       this.appliedLoans = data;
     });
   }

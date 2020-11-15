@@ -11,11 +11,19 @@ export class LoanApplicationService {
 
   constructor(private http: HttpClient) { }
 
-  public getAppliedLoansForCustomer(): Observable<UserLoanApplication[]> {
+  public getAppliedLoans(): Observable<UserLoanApplication[]> {
     return this.http.get<UserLoanApplication[]>('http://localhost:8080/api/loan-applications/customer');
   }
 
-  public getPendingLoansForEmployee(): Observable<EmployeeLoanApplication[]> {
+  public getPendingLoans(): Observable<EmployeeLoanApplication[]> {
     return this.http.get<EmployeeLoanApplication[]>('http://localhost:8080/api/loan-applications/employee');
+  }
+
+  public approveLoanWithId(id: number): Observable<void> {
+    return this.http.post<void>('http://localhost:8080/api/loan-applications/employee/approve/' + id, null);
+  }
+
+  public rejectLoanWithId(id: number): Observable<void> {
+    return this.http.post<void>('http://localhost:8080/api/loan-applications/employee/reject/' + id, null);
   }
 }

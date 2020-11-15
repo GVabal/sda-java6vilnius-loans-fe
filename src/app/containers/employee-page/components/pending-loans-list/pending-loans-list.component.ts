@@ -10,6 +10,8 @@ import {LoanApplicationService} from '../../../../services/loan-application.serv
 export class PendingLoansListComponent implements OnInit {
 
   pendingLoans: EmployeeLoanApplication[] = [];
+  showDetails = false;
+  selectedLoan: EmployeeLoanApplication = {};
 
   constructor(private loanApplicationService: LoanApplicationService) { }
 
@@ -18,8 +20,17 @@ export class PendingLoansListComponent implements OnInit {
   }
 
   getData(): void {
-    this.loanApplicationService.getPendingLoansForEmployee().subscribe(data => {
+    this.loanApplicationService.getPendingLoans().subscribe(data => {
       this.pendingLoans = data;
     });
+  }
+
+  showLoanDetails(loan: EmployeeLoanApplication): void {
+    this.showDetails = true;
+    this.selectedLoan = loan;
+  }
+
+  hideLoanDetails(): void {
+    this.showDetails = false;
   }
 }
