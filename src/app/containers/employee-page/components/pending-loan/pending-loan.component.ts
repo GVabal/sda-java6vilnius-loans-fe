@@ -10,6 +10,7 @@ import {LoanApplicationService} from '../../../../services/loan-application.serv
 export class PendingLoanComponent implements OnInit {
 
   @Input() loan: EmployeeLoanApplication;
+  showSubmitMessage = false;
 
   constructor(private loanApplicationService: LoanApplicationService) {
   }
@@ -19,10 +20,12 @@ export class PendingLoanComponent implements OnInit {
 
   approveLoan(id: number): void {
     this.loanApplicationService.approveLoanWithId(id).subscribe(() => {});
+    this.showSubmitMessage = true;
   }
 
   rejectLoan(id: number): void {
     this.loanApplicationService.rejectLoanWithId(id).subscribe(() => {});
+    this.showSubmitMessage = true;
   }
 
 }

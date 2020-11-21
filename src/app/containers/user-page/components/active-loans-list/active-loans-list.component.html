@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Amount Granted</th>
+    <th>Amount to Repay Left</th>
+    <th>Amount Payed</th>
+    <th>Repay</th>
+  </tr>
+  <tr *ngFor="let loan of loans">
+    <td>{{loan.amountGranted}}</td>
+    <td>{{loan.amountToRepay}}</td>
+    <td>{{loan.amountPayed}}</td>
+    <td><button>Repay</button></td>
+  </tr>
+</table>

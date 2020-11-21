@@ -17,6 +17,7 @@ import {ErrorInterceptor} from './interceptors/ErrorInterceptor';
 import {JwtInterceptor} from './interceptors/JwtInterceptor';
 import { PendingLoansListComponent } from './containers/employee-page/components/pending-loans-list/pending-loans-list.component';
 import { PendingLoanComponent } from './containers/employee-page/components/pending-loan/pending-loan.component';
+import { ActiveLoansListComponent } from './containers/user-page/components/active-loans-list/active-loans-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PendingLoanComponent } from './containers/employee-page/components/pend
     NotFoundPageComponent,
     AppliedLoansListComponent,
     PendingLoansListComponent,
-    PendingLoanComponent
+    PendingLoanComponent,
+    ActiveLoansListComponent
   ],
   imports: [
     BrowserModule,
