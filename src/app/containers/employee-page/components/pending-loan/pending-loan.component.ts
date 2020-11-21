@@ -21,11 +21,13 @@ export class PendingLoanComponent implements OnInit {
   approveLoan(id: number): void {
     this.loanApplicationService.approveLoanWithId(id).subscribe(() => {});
     this.showSubmitMessage = true;
+    window.location.reload();
   }
 
   rejectLoan(id: number): void {
     this.loanApplicationService.rejectLoanWithId(id).subscribe(() => {});
     this.showSubmitMessage = true;
+    window.location.reload();
   }
 
 }

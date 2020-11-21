@@ -25,5 +25,6 @@ export class AppliedLoansListComponent implements OnInit {
 
   takeLoan(loanApplication: CustomerLoanApplication): void {
     this.loanApplicationService.takeLoan(loanApplication).subscribe(() => {});
+    window.location.reload();
   }
 }

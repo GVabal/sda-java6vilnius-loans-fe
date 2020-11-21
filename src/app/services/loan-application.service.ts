@@ -28,6 +28,6 @@ export class LoanApplicationService {
   }
 
   public takeLoan(loanApplication: CustomerLoanApplication): Observable<void> {
-    return this.http.post<void>('', null);
+    return this.http.post<void>('http://localhost:8080/api/loan-applications/customer/' + loanApplication.id, null);
   }
 }
