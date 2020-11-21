@@ -1,0 +1,16 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm">
+  <input type="number" placeholder="Amount" name="amount" ngModel required/>
+  <br>
+  Period Months:
+  <select name="termMonths" ngModel>
+    <option [value]=12>12</option>
+    <option [value]=24>24</option>
+    <option [value]=36>36</option>
+    <option [value]=48>48</option>
+    <option [value]=60>60</option>
+  </select>
+  <br>
+  <textarea type="text" placeholder="Reason for taking the loan" name="loanReason" ngModel required></textarea>
+  <br>
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>

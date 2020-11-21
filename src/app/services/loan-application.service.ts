@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {CustomerLoanApplication} from '../interfaces/CustomerLoanApplication';
 import {EmployeeLoanApplication} from '../interfaces/EmployeeLoanApplication';
+import {LoanApplicationRequest} from '../interfaces/LoanApplicationRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,11 @@ export class LoanApplicationService {
     return this.http.post<void>('http://localhost:8080/api/loan-applications/employee/reject/' + id, null);
   }
 
-  public takeLoan(loanApplication: CustomerLoanApplication): Observable<void> {
-    return this.http.post<void>('http://localhost:8080/api/loan-applications/customer/' + loanApplication.id, null);
+  public applyForLoan(loanApplicationRequest: LoanApplicationRequest): Observable<void> {
+    return this.http.post<void>('http://localhost:8080/api/loan-applications/customer/', loanApplicationRequest);
+  }
+
+  public takeLoan(id: number): Observable<void> {
+    return this.http.post<void>('http://localhost:8080/api/loan-applications/customer/' + id, null);
   }
 }

@@ -18,6 +18,7 @@ import {JwtInterceptor} from './interceptors/JwtInterceptor';
 import { PendingLoansListComponent } from './containers/employee-page/components/pending-loans-list/pending-loans-list.component';
 import { PendingLoanComponent } from './containers/employee-page/components/pending-loan/pending-loan.component';
 import { ActiveLoansListComponent } from './containers/user-page/components/active-loans-list/active-loans-list.component';
+import {LoanApplicationFormComponent} from './containers/user-page/components/loan-application-form/loan-application-form.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ActiveLoansListComponent } from './containers/user-page/components/acti
     AppliedLoansListComponent,
     PendingLoansListComponent,
     PendingLoanComponent,
-    ActiveLoansListComponent
+    ActiveLoansListComponent,
+    LoanApplicationFormComponent
   ],
   imports: [
     BrowserModule,
