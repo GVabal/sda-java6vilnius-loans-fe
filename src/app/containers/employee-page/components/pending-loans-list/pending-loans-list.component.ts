@@ -11,7 +11,7 @@ export class PendingLoansListComponent implements OnInit {
 
   pendingLoans: EmployeeLoanApplication[] = [];
   showDetails = false;
-  selectedLoan: EmployeeLoanApplication = {};
+  selectedLoan: EmployeeLoanApplication;
 
   constructor(private loanApplicationService: LoanApplicationService) { }
 

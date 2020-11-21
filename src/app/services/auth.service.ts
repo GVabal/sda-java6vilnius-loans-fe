@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   public isUser(): boolean {
-    return this.isAuthenticated() && this.authValue.user.role === Role.ROLE_USER;
+    return this.isAuthenticated() && this.authValue.user.role === Role.ROLE_CUSTOMER;
   }
 
   login(userLogin: LoginData): Observable<AuthResponse> {

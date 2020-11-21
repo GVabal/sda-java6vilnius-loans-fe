@@ -2,9 +2,11 @@
   <tr>
     <th>Amount</th>
     <th>Status</th>
+    <th>Action</th>
   </tr>
   <tr *ngFor="let loan of appliedLoans">
     <td>{{loan.amount}}</td>
     <td>{{loan.status}}</td>
+    <td *ngIf="loan.status === 'APPROVED'"><button (click)="takeLoan(loan)">Accept</button></td>
   </tr>
 </table>

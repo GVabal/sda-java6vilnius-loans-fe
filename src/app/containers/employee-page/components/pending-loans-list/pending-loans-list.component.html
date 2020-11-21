@@ -4,13 +4,11 @@
   <tr>
     <th>Amount</th>
     <th>Name</th>
-    <th>Bank Account</th>
     <th>Details</th>
   </tr>
   <tr *ngFor="let loan of pendingLoans">
     <td>{{loan.amount}}</td>
     <td>{{loan.customer.firstName}} {{loan.customer.lastName}}</td>
-    <td>{{loan.customer.bankAccountNumber}}</td>
     <td><button (click)="showLoanDetails(loan)">Show Details</button></td>
   </tr>
 </table>

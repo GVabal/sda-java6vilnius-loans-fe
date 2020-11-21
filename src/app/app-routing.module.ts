@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'user',
     component: UserPageComponent,
     canActivate: [AuthGuard],
-    data: {role: Role.ROLE_USER},
+    data: {role: Role.ROLE_CUSTOMER},
   },
   {
     path: 'employee',

@@ -3,6 +3,9 @@
   <p>{{loan.amount}}</p>
   <p>{{loan.customer.firstName}} {{loan.customer.lastName}}</p>
   <p>{{loan.customer.bankAccountNumber}}</p>
+  <p>{{loan.interestRatePerYear}}</p>
+  <p>{{loan.termMonths}}</p>
+  <p>{{loan.loanReason}}</p>
   <button (click)="approveLoan(loan.id)">Approve</button>
   <button (click)="rejectLoan(loan.id)">Reject</button>
 </div>
