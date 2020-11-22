@@ -9,6 +9,18 @@
     <td>{{loan.amountGranted}}</td>
     <td>{{loan.amountToRepay}}</td>
     <td>{{loan.amountPayed}}</td>
-    <td><button>Repay</button></td>
+    <td><button (click)="openRepayWindowForLoan(loan)">Repay</button></td>
   </tr>
 </table>
+
+<div *ngIf="displayPaymentWindow" class="payment-window">
+  <p>Amount payed:{{selectedLoan.amountPayed}}</p>
+  <p>Amount left to pay: {{selectedLoan.amountToRepay}}</p>
+  <form>
+    Repay amount: <input type="number" name="amount" [(ngModel)]="amount">
+    <br>
+    <button (click)="repayLoan(selectedLoan.id, amount)">Repay</button>
+    <p *ngIf="paymentSuccess" >Success!</p>
+  </form>
+  <button (click)="closeRepayWindowForLoan()">Close</button>
+</div>
