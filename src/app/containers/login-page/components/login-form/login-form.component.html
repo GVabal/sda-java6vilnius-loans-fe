@@ -1,8 +1,4 @@
 <h2>Login Form</h2>
-<p>1 U: user@email.com P: password</p>
-<p>2 U: admin@email.com P: password</p>
-<p>3 U: employee@email.com P: password</p>
-<p>4 U: otherUser@email.com P: password</p>
 <form (ngSubmit)="login()">
   <input name="email" type="email" [(ngModel)]="loginData.email">
   <br>
@@ -10,3 +6,4 @@
   <br>
   <button type="submit" [disabled]="isLoading">{{isLoading ? 'Loading...' : 'Login!'}}</button>
 </form>
+

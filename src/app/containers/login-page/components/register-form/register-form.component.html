@@ -1,0 +1,8 @@
+<h2>Register Form</h2>
+<form (ngSubmit)="register()">
+  <input name="email" type="email" [(ngModel)]="registerData.email">
+  <br>
+  <input name="password" type="password" [(ngModel)]="registerData.password">
+  <br>
+  <button type="submit" [disabled]="isLoading">{{isLoading ? 'Loading...' : 'Register!'}}</button>
+</form>

@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {LoginData} from '../interfaces/LoginData';
 import {Role} from '../enums/Role';
+import {UserRegisterRequest} from '../interfaces/UserRegisterRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,10 @@ export class AuthService {
 
   public isUser(): boolean {
     return this.isAuthenticated() && this.authValue.user.role === Role.ROLE_CUSTOMER;
+  }
+
+  register(userRegisterRequest: UserRegisterRequest): Observable<void> {
+    return this.http.post<void>('http://localhost:8080/api/auth/register', userRegisterRequest);
   }
 
   login(userLogin: LoginData): Observable<AuthResponse> {

@@ -21,6 +21,7 @@ import { ActiveLoansListComponent } from './containers/user-page/components/acti
 import {LoanApplicationFormComponent} from './containers/user-page/components/loan-application-form/loan-application-form.component';
 import { EmployeeListComponent } from './containers/admin-page/components/employee-list/employee-list.component';
 import { AddEmployeeFormComponent } from './containers/admin-page/components/add-employee-form/add-employee-form.component';
+import { RegisterFormComponent } from './containers/login-page/components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AddEmployeeFormComponent } from './containers/admin-page/components/add
     ActiveLoansListComponent,
     LoanApplicationFormComponent,
     EmployeeListComponent,
-    AddEmployeeFormComponent
+    AddEmployeeFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
