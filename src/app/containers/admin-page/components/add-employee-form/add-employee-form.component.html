@@ -1,0 +1,6 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm">
+  <h3>New Employee Form</h3>
+  <input type="email" name="email" placeholder="Email" ngModel required>
+  <br>
+  <button type="submit" [disabled]="form.invalid">Add New Employee</button>
+</form>

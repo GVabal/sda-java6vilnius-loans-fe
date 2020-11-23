@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>PID</th>
+    <th>Email</th>
+    <th>Terminate</th>
+  </tr>
+  <tr *ngFor="let employee of employees">
+    <td>{{employee.pid}}</td>
+    <td>{{employee.email}}</td>
+    <td>
+      <button (click)="terminateEmployee(employee.id)">Terminate</button>
+    </td>
+  </tr>
+</table>

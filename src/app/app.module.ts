@@ -19,6 +19,8 @@ import { PendingLoansListComponent } from './containers/employee-page/components
 import { PendingLoanComponent } from './containers/employee-page/components/pending-loan/pending-loan.component';
 import { ActiveLoansListComponent } from './containers/user-page/components/active-loans-list/active-loans-list.component';
 import {LoanApplicationFormComponent} from './containers/user-page/components/loan-application-form/loan-application-form.component';
+import { EmployeeListComponent } from './containers/admin-page/components/employee-list/employee-list.component';
+import { AddEmployeeFormComponent } from './containers/admin-page/components/add-employee-form/add-employee-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {LoanApplicationFormComponent} from './containers/user-page/components/lo
     PendingLoansListComponent,
     PendingLoanComponent,
     ActiveLoansListComponent,
-    LoanApplicationFormComponent
+    LoanApplicationFormComponent,
+    EmployeeListComponent,
+    AddEmployeeFormComponent
   ],
   imports: [
     BrowserModule,
