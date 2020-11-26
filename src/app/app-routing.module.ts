@@ -8,6 +8,8 @@ import {HomePageComponent} from './containers/home-page/home-page.component';
 import {AuthGuard} from './guards/AuthGuard';
 import {Role} from './enums/Role';
 import {NotFoundPageComponent} from './containers/not-found-page/not-found-page.component';
+import {RegisterPageComponent} from './containers/register-page/register-page.component';
+import {LoanApplicationFormComponent} from './containers/user-page/components/loan-application-form/loan-application-form.component';
 
 const routes: Routes = [
   {
@@ -19,8 +21,18 @@ const routes: Routes = [
     component: LoginPageComponent,
   },
   {
+    path: 'register',
+    component: RegisterPageComponent,
+  },
+  {
     path: 'user',
     component: UserPageComponent,
+    canActivate: [AuthGuard],
+    data: {role: Role.ROLE_CUSTOMER},
+  },
+  {
+    path: 'user/apply',
+    component: LoanApplicationFormComponent,
     canActivate: [AuthGuard],
     data: {role: Role.ROLE_CUSTOMER},
   },

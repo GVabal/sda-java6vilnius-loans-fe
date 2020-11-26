@@ -1,16 +1,20 @@
-<form (ngSubmit)="submitForm(form)" #form="ngForm">
-  <input type="number" placeholder="Amount" name="amount" ngModel required/>
+<h1>Loan Application Form</h1>
+<form (ngSubmit)="submit(form)" #form="ngForm">
+  <mat-form-field appearance="standard">
+    <mat-label>Amount</mat-label>
+    <input matInput name="amount" type="number" ngModel required>
+  </mat-form-field>
   <br>
-  Period Months:
-  <select name="termMonths" ngModel>
-    <option [value]=12>12</option>
-    <option [value]=24>24</option>
-    <option [value]=36>36</option>
-    <option [value]=48>48</option>
-    <option [value]=60>60</option>
-  </select>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Period Months</mat-label>
+    <input matInput type="number" name="termMonths" ngModel required>
+  </mat-form-field>
   <br>
-  <textarea type="text" placeholder="Reason for taking the loan" name="loanReason" ngModel required></textarea>
+  <mat-form-field appearance="standard">
+    <mat-label>Reason for taking the loan</mat-label>
+    <textarea matInput type="text" name="loanReason" ngModel required></textarea>
+  </mat-form-field>
   <br>
-  <button type="submit" [disabled]="form.invalid">Submit</button>
+  <button mat-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
 </form>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LoginData} from '../../../../interfaces/LoginData';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../../services/auth.service';
-import {UserRegisterRequest} from '../../../../interfaces/UserRegisterRequest';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -11,7 +11,6 @@ import {UserRegisterRequest} from '../../../../interfaces/UserRegisterRequest';
 })
 export class LoginFormComponent implements OnInit {
 
-  loginData: LoginData = {email: '', password: ''};
   isLoading = false;
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -19,15 +18,18 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(): void {
+  login(form: NgForm): void {
     if (!this.isLoading) {
       this.isLoading = true;
-      this.authService.login(this.loginData).subscribe(() => {
+      const loginData: LoginData = {
+        email: form.value.email,
+        password: form.value.password
+      };
+      this.authService.login(loginData).subscribe(() => {
         this.router.navigate(['/']);
         this.isLoading = false;
       }, error => {
         this.isLoading = false;
-        console.log(error.error.message);
       });
     }
   }

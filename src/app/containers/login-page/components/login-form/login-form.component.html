@@ -1,9 +1,15 @@
-<h2>Login Form</h2>
-<form (ngSubmit)="login()">
-  <input name="email" type="email" [(ngModel)]="loginData.email">
+<h2>Login</h2>
+<form (ngSubmit)="login(form)" #form="ngForm">
+  <mat-form-field appearance="standard">
+    <mat-label>Enter your email</mat-label>
+    <input matInput name="email" type="email" ngModel required>
+  </mat-form-field>
   <br>
-  <input name="password" type="password" [(ngModel)]="loginData.password">
+  <mat-form-field appearance="standard">
+    <mat-label>Enter your password</mat-label>
+    <input matInput name="password" type="password" ngModel required>
+  </mat-form-field>
   <br>
-  <button type="submit" [disabled]="isLoading">{{isLoading ? 'Loading...' : 'Login!'}}</button>
+  <button type="submit" [disabled]="isLoading || form.invalid">{{isLoading ? 'Loading...' : 'Login!'}}</button>
 </form>
 

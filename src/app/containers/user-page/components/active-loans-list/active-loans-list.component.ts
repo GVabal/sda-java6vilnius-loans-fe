@@ -16,7 +16,10 @@ export class ActiveLoansListComponent implements OnInit {
   displayPaymentWindow = false;
   paymentSuccess = false;
 
-  constructor(private loanService: LoanService, private paymentService: PaymentService) { }
+  displayedColumns: string[] = ['amountRepay', 'amountPayed', 'repay'];
+
+  constructor(private loanService: LoanService,
+              private paymentService: PaymentService) { }
 
   ngOnInit(): void {
     this.getData();
