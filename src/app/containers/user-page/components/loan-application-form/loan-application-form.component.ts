@@ -16,7 +16,7 @@ export class LoanApplicationFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitForm(form: NgForm): void {
+  submit(form: NgForm): void {
     const request: LoanApplicationRequest = form.value;
     this.loanApplicationService.applyForLoan(request).subscribe(() => window.location.reload());
   }

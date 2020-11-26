@@ -1,24 +1,42 @@
-<table>
-  <tr>
-    <th>Amount to Repay Left</th>
-    <th>Amount Payed</th>
-    <th>Repay</th>
-  </tr>
-  <tr *ngFor="let loan of loans">
-    <td>{{loan.amountToRepay}}</td>
-    <td>{{loan.amountPayed}}</td>
-    <td><button (click)="openRepayWindowForLoan(loan)">Repay</button></td>
-  </tr>
-</table>
+<h2>Active Loans</h2>
+<div class="mat-elevation-z2">
+  <table mat-table [dataSource]="loans">
 
-<div *ngIf="displayPaymentWindow" class="payment-window">
-  <p>Amount payed:{{selectedLoan.amountPayed}}</p>
-  <p>Amount left to pay: {{selectedLoan.amountToRepay}}</p>
-  <form>
-    Repay amount: <input type="number" name="amount" [(ngModel)]="amount">
-    <br>
-    <button (click)="repayLoan(selectedLoan.id, amount)">Repay</button>
-    <p *ngIf="paymentSuccess" >Success!</p>
-  </form>
-  <button (click)="closeRepayWindowForLoan()">Close</button>
+    <ng-container matColumnDef="amountRepay">
+      <th mat-header-cell *matHeaderCellDef> Amount to Repay Left </th>
+      <td mat-cell *matCellDef="let loan"> {{loan.amountToRepay}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amountPayed">
+      <th mat-header-cell *matHeaderCellDef> Amount Payed </th>
+      <td mat-cell *matCellDef="let loan"> {{loan.amountPayed}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="repay">
+      <th mat-header-cell *matHeaderCellDef> Repay </th>
+      <td mat-cell *matCellDef="let loan"> <button mat-button (click)="openRepayWindowForLoan(loan)">Repay</button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<div *ngIf="displayPaymentWindow" class="payment-window mat-elevation-z24">
+  <h2 mat-dialog-title>Repay Loan</h2>
+  <mat-dialog-content>
+    <p>Amount to Repay Left: {{selectedLoan.amountToRepay}}</p>
+    <p>Amount Payed: {{selectedLoan.amountPayed}}</p>
+    <div class="container">
+      <mat-form-field appearance="fill">
+        <mat-label>Repay amount</mat-label>
+        <input matInput type="number" name="amount" [(ngModel)]="amount">
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button color="primary" (click)="repayLoan(selectedLoan.id, amount)"><mat-icon>payment</mat-icon> Repay</button>
+    <button mat-button color="primary" (click)="closeRepayWindowForLoan()"><mat-icon>cancel</mat-icon> Cancel</button>
+  </mat-dialog-actions>
+  <p *ngIf="paymentSuccess">Payment done!</p>
 </div>

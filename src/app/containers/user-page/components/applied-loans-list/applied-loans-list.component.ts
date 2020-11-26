@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CustomerLoanApplication} from '../../../../interfaces/CustomerLoanApplication';
 import {LoanApplicationService} from '../../../../services/loan-application.service';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-applied-loans-list',
@@ -9,7 +10,9 @@ import {LoanApplicationService} from '../../../../services/loan-application.serv
 })
 export class AppliedLoansListComponent implements OnInit {
 
-  appliedLoans: CustomerLoanApplication[] = [];
+  displayedColumns: string[] = ['amount', 'status', 'action'];
+  appliedLoans: MatTableDataSource<CustomerLoanApplication>;
+
 
   constructor(private loanApplicationService: LoanApplicationService) { }
 
@@ -19,7 +22,7 @@ export class AppliedLoansListComponent implements OnInit {
 
   getData(): void {
     this.loanApplicationService.getAppliedLoans().subscribe(data => {
-      this.appliedLoans = data;
+      this.appliedLoans = new MatTableDataSource<CustomerLoanApplication>(data);
     });
   }
 

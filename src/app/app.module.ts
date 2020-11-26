@@ -9,7 +9,7 @@ import { UserPageComponent } from './containers/user-page/user-page.component';
 import { EmployeePageComponent } from './containers/employee-page/employee-page.component';
 import { HomePageComponent } from './containers/home-page/home-page.component';
 import { LoginFormComponent } from './containers/login-page/components/login-form/login-form.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { NotFoundPageComponent } from './containers/not-found-page/not-found-page.component';
 import { AppliedLoansListComponent } from './containers/user-page/components/applied-loans-list/applied-loans-list.component';
@@ -21,7 +21,12 @@ import { ActiveLoansListComponent } from './containers/user-page/components/acti
 import {LoanApplicationFormComponent} from './containers/user-page/components/loan-application-form/loan-application-form.component';
 import { EmployeeListComponent } from './containers/admin-page/components/employee-list/employee-list.component';
 import { AddEmployeeFormComponent } from './containers/admin-page/components/add-employee-form/add-employee-form.component';
-import { RegisterFormComponent } from './containers/login-page/components/register-form/register-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from './shared/material.module';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { RegisterPageComponent } from './containers/register-page/register-page.component';
+import {RegisterFormComponent} from './containers/register-page/components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +45,20 @@ import { RegisterFormComponent } from './containers/login-page/components/regist
     LoanApplicationFormComponent,
     EmployeeListComponent,
     AddEmployeeFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ToolbarComponent,
+    NavigationComponent,
+    RegisterPageComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

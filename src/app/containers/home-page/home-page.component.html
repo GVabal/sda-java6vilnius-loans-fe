@@ -1,5 +1,17 @@
-<h1>Home Page</h1>
-<p>General info, link to login or register</p>
-<br>
-<p *ngIf="authService.isAuthenticated()">You are logged in as: {{authService.authValue.user.username}}.</p>
-<p *ngIf="!authService.isAuthenticated()">You are not logged in.</p>
+<div *ngIf="!authService.isAuthenticated()">
+  <mat-card>
+    <mat-card-title>
+      Unforeseen expenses can happen for everyone
+    </mat-card-title>
+    <mat-card-content>
+      <p>
+        aprasyti info apie savo projekta
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="authService.isAuthenticated()" >
+  <mat-spinner></mat-spinner>
+  {{redirect()}}
+</div>
