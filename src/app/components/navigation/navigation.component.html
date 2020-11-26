@@ -5,6 +5,9 @@
 
   <button mat-button *ngIf="authService.isUser()" routerLink="/user">Your Loans</button>
   <button mat-button *ngIf="authService.isUser()" routerLink="/user/apply">Apply for Loan</button>
+
   <button mat-button *ngIf="authService.isEmployee()" routerLink="/employee">Loan Applications</button>
+
   <button mat-button *ngIf="authService.isAdmin()" routerLink="/admin">Employee Manager</button>
+  <button mat-button *ngIf="authService.isAdmin()" routerLink="/admin/new-employee">Add Employee</button>
 </nav>

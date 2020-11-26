@@ -1,4 +1,4 @@
-<div>
+<mat-card>
   <h2>Loan Application #{{loan.id}}</h2>
   <p>Amount: {{loan.amount}}</p>
   <p>Customer: {{loan.customer.firstName}} {{loan.customer.lastName}}</p>
@@ -6,7 +6,7 @@
   <p>Interest Rate per Year: {{loan.interestRatePerYear}}</p>
   <p>Term Months: {{loan.termMonths}}</p>
   <p>Reason: {{loan.loanReason}}</p>
-  <button (click)="approveLoan(loan.id)">Approve</button>
-  <button (click)="rejectLoan(loan.id)">Reject</button>
+  <button mat-button color="primary" (click)="approveLoan(loan.id)">Approve</button>
+  <button mat-button color="primary" (click)="rejectLoan(loan.id)">Reject</button>
   <p *ngIf="showSubmitMessage">Application processed!</p>
-</div>
+</mat-card>

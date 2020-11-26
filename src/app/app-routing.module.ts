@@ -10,6 +10,7 @@ import {Role} from './enums/Role';
 import {NotFoundPageComponent} from './containers/not-found-page/not-found-page.component';
 import {RegisterPageComponent} from './containers/register-page/register-page.component';
 import {LoanApplicationFormComponent} from './containers/user-page/components/loan-application-form/loan-application-form.component';
+import {AddEmployeeFormComponent} from './containers/admin-page/components/add-employee-form/add-employee-form.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,12 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminPageComponent,
+    canActivate: [AuthGuard],
+    data: {role: Role.ROLE_ADMIN},
+  },
+  {
+    path: 'admin/new-employee',
+    component: AddEmployeeFormComponent,
     canActivate: [AuthGuard],
     data: {role: Role.ROLE_ADMIN},
   },

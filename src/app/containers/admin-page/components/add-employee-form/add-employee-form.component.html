@@ -1,6 +1,9 @@
 <form (ngSubmit)="submitForm(form)" #form="ngForm">
-  <h3>New Employee Form</h3>
-  <input type="email" name="email" placeholder="Email" ngModel required>
+  <h2>Add Employee Form</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" name="email" ngModel required>
+    </mat-form-field>
   <br>
-  <button type="submit" [disabled]="form.invalid">Add New Employee</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Add New Employee</button>
 </form>
