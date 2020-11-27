@@ -26,6 +26,6 @@
     <input matInput name="bankAccountNumber" type="text" ngModel required>
   </mat-form-field>
   <br>
-  <button type="submit" [disabled]="isLoading || form.invalid">{{isLoading ? 'Loading...' : 'Register!'}}</button>
+  <button mat-button color="primary" type="submit" [disabled]="isLoading || form.invalid">{{isLoading ? 'Loading...' : 'Register!'}}</button>
   <p *ngIf="isRegisterSuccessful">Registration complete!</p>
 </form>

@@ -1,20 +1,22 @@
-<h1>Loan Application Form</h1>
-<form (ngSubmit)="submit(form)" #form="ngForm">
-  <mat-form-field appearance="standard">
-    <mat-label>Amount</mat-label>
-    <input matInput name="amount" type="number" ngModel required>
-  </mat-form-field>
-  <br>
+<div class="centered">
+  <h1>Loan Application Form</h1>
+  <form (ngSubmit)="submit(form)" #form="ngForm">
+    <mat-form-field appearance="standard">
+      <mat-label>Amount</mat-label>
+      <input matInput name="amount" type="number" ngModel required>
+    </mat-form-field>
+    <br>
 
-  <mat-form-field appearance="standard">
-    <mat-label>Period Months</mat-label>
-    <input matInput type="number" name="termMonths" ngModel required>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="standard">
-    <mat-label>Reason for taking the loan</mat-label>
-    <textarea matInput type="text" name="loanReason" ngModel required></textarea>
-  </mat-form-field>
-  <br>
-  <button mat-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
-</form>
+    <mat-form-field appearance="standard">
+      <mat-label>Period Months</mat-label>
+      <input matInput type="number" name="termMonths" ngModel required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Reason for taking the loan</mat-label>
+      <textarea matInput type="text" name="loanReason" ngModel required></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
