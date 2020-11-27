@@ -13,7 +13,10 @@
 
   <ng-container matColumnDef="terminate">
     <th mat-header-cell *matHeaderCellDef> Terminate </th>
-    <td mat-cell *matCellDef="let employee"> <button mat-button (click)="terminateEmployee(employee.id)">Terminate</button> </td>
+    <td mat-cell *matCellDef="let employee">
+      <button mat-button *ngIf="employee.status === 'ACTIVE'" (click)="terminateEmployee(employee.id)">Terminate</button>
+      <span *ngIf="employee.status === 'TERMINATED'">Terminated</span>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

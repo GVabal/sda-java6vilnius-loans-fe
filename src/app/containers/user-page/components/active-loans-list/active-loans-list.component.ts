@@ -43,6 +43,9 @@ export class ActiveLoansListComponent implements OnInit {
 
   repayLoan(id: number, amount: number): void {
     this.paymentService.payBackLoan(id, amount).subscribe(() => this.paymentSuccess = true);
+    this.selectedLoan.amountPayed += amount;
+    this.selectedLoan.amountToRepay -= amount;
+    this.amount = null;
   }
 
 }

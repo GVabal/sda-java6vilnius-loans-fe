@@ -7,7 +7,6 @@ import {AdminPageComponent} from './containers/admin-page/admin-page.component';
 import {HomePageComponent} from './containers/home-page/home-page.component';
 import {AuthGuard} from './guards/AuthGuard';
 import {Role} from './enums/Role';
-import {NotFoundPageComponent} from './containers/not-found-page/not-found-page.component';
 import {RegisterPageComponent} from './containers/register-page/register-page.component';
 import {LoanApplicationFormComponent} from './containers/user-page/components/loan-application-form/loan-application-form.component';
 import {AddEmployeeFormComponent} from './containers/admin-page/components/add-employee-form/add-employee-form.component';
@@ -57,7 +56,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: NotFoundPageComponent,
+    redirectTo: '',
   },
 ];
 

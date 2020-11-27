@@ -11,7 +11,6 @@ import { HomePageComponent } from './containers/home-page/home-page.component';
 import { LoginFormComponent } from './containers/login-page/components/login-form/login-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { NotFoundPageComponent } from './containers/not-found-page/not-found-page.component';
 import { AppliedLoansListComponent } from './containers/user-page/components/applied-loans-list/applied-loans-list.component';
 import {ErrorInterceptor} from './interceptors/ErrorInterceptor';
 import {JwtInterceptor} from './interceptors/JwtInterceptor';
@@ -37,7 +36,6 @@ import {RegisterFormComponent} from './containers/register-page/components/regis
     EmployeePageComponent,
     HomePageComponent,
     LoginFormComponent,
-    NotFoundPageComponent,
     AppliedLoansListComponent,
     PendingLoansListComponent,
     PendingLoanComponent,

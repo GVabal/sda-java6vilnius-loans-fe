@@ -22,7 +22,9 @@ export class PendingLoansListComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private loanApplicationService: LoanApplicationService) { }
+  constructor(private loanApplicationService: LoanApplicationService) {
+    this.dataSource = new MatTableDataSource<EmployeeLoanApplication>(this.pendingLoans);
+  }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -36,7 +38,7 @@ export class PendingLoansListComponent implements OnInit, AfterViewInit {
   getData(): void {
     this.loanApplicationService.getPendingLoans().subscribe(data => {
       this.pendingLoans = data;
-      this.dataSource = new MatTableDataSource<EmployeeLoanApplication>(this.pendingLoans);
+      this.dataSource.data = this.pendingLoans;
     });
   }
 

@@ -17,7 +17,6 @@ export class AddEmployeeFormComponent implements OnInit {
 
   submitForm(form: NgForm): void {
     const request: UserRegisterRequest = {
-      username: form.value.email.split('@')[0],
       email: form.value.email,
       password: 'password',
     };
