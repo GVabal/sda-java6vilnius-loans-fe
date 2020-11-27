@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LoginData} from '../../../../interfaces/LoginData';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../../services/auth.service';
-import {NgForm} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -11,25 +11,47 @@ import {NgForm} from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
 
+  loginFailed = false;
   isLoading = false;
+  form: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService,
+              private router: Router,
+              private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      password: ['', [
+        Validators.required
+      ]]
+    });
   }
 
-  login(form: NgForm): void {
+  get email(): AbstractControl {
+    return this.form.get('email');
+  }
+
+  get password(): AbstractControl {
+    return this.form.get('password');
+  }
+
+  login(): void {
     if (!this.isLoading) {
       this.isLoading = true;
       const loginData: LoginData = {
-        email: form.value.email,
-        password: form.value.password
+        email: this.form.value.email,
+        password: this.form.value.password
       };
       this.authService.login(loginData).subscribe(() => {
         this.router.navigate(['/']);
         this.isLoading = false;
       }, error => {
         this.isLoading = false;
+        this.loginFailed = true;
       });
     }
   }

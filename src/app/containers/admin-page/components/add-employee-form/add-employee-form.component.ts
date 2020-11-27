@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EmployeeService} from '../../../../services/employee.service';
-import {NgForm} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import {UserRegisterRequest} from '../../../../interfaces/UserRegisterRequest';
 
 @Component({
@@ -10,17 +10,36 @@ import {UserRegisterRequest} from '../../../../interfaces/UserRegisterRequest';
 })
 export class AddEmployeeFormComponent implements OnInit {
 
-  constructor(private employeeService: EmployeeService) { }
+  form: FormGroup;
+  success = false;
+  error = '';
+
+  constructor(private employeeService: EmployeeService,
+              private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]]
+    });
   }
 
-  submitForm(form: NgForm): void {
+  get email(): AbstractControl {
+    return this.form.get('email');
+  }
+
+  submit(): void {
     const request: UserRegisterRequest = {
-      email: form.value.email,
+      email: this.form.value.email,
       password: 'password',
     };
-    this.employeeService.addEmployee(request).subscribe(() => window.location.reload());
+    this.employeeService.addEmployee(request).subscribe(() => {
+      this.success = true;
+    }, error => {
+      this.error = error;
+    });
   }
 
 }

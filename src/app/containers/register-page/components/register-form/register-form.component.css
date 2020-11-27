@@ -1,3 +1,17 @@
+.container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
 mat-form-field {
-  width: 375px;
+  width: 300px;
+}
+
+.success {
+  color: darkgreen;
+}
+
+.failure {
+  color: darkred;
 }

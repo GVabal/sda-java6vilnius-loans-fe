@@ -1,15 +1,20 @@
-<h2>Login</h2>
-<form (ngSubmit)="login(form)" #form="ngForm">
+<form class="container" [formGroup]="form">
+  <h2>Login</h2>
   <mat-form-field appearance="standard">
     <mat-label>Enter your email</mat-label>
-    <input matInput name="email" type="email" ngModel required>
+    <input matInput type="email" formControlName="email" required>
+    <mat-error *ngIf="email.errors?.required">Email is missing</mat-error>
+    <mat-error *ngIf="email.errors?.email">Not an email</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="standard">
     <mat-label>Enter your password</mat-label>
-    <input matInput name="password" type="password" ngModel required>
+    <input matInput type="password" formControlName="password" required>
+    <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
   </mat-form-field>
   <br>
-  <button mat-button color="primary" type="submit" [disabled]="isLoading || form.invalid">{{isLoading ? 'Loading...' : 'Login!'}}</button>
+  <button mat-raised-button color="primary"
+          [disabled]="isLoading || form.invalid"
+          (click)="login()">{{isLoading ? 'Loading...' : 'Login!'}}</button>
+  <p class="failure" *ngIf="loginFailed">Login failed</p>
 </form>
-
