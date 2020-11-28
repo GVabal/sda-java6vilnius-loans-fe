@@ -14,7 +14,7 @@ You can log in with one of the demo accounts to start:
 ```
 Login               | Password
 -------------------------------
-customerr@email.com      | password
+customerr@email.com | password
 employee@email.com  | password
 admin@email.com     | password
 ```
