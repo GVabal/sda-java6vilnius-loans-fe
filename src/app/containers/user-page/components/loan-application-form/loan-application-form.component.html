@@ -3,7 +3,7 @@
   <form [formGroup]="form">
     <mat-form-field appearance="standard">
       <mat-label>Amount</mat-label>
-      <input matInput type="number" formControlName="amount" required>
+      <input formControlName="amount" matInput required type="number">
       <mat-hint align="end">Between 100 and 15000</mat-hint>
       <mat-error *ngIf="amount.errors?.required">Must provide</mat-error>
       <mat-error *ngIf="amount.errors?.min">Min 100</mat-error>
@@ -12,7 +12,7 @@
     <br>
     <mat-form-field appearance="standard">
       <mat-label>Period Months</mat-label>
-      <input matInput type="number" formControlName="termMonths" required>
+      <input formControlName="termMonths" matInput required type="number">
       <mat-hint align="end">Between 6 and 60 months</mat-hint>
       <mat-error *ngIf="termMonths.errors?.required">Must provide</mat-error>
       <mat-error *ngIf="termMonths.errors?.min">Min 6 months</mat-error>
@@ -21,14 +21,14 @@
     <br>
     <mat-form-field appearance="standard">
       <mat-label>Reason for taking the loan</mat-label>
-      <textarea matInput type="text" formControlName="loanReason" required></textarea>
+      <textarea formControlName="loanReason" matInput required type="text"></textarea>
       <mat-hint align="end">Maximum 188 characters</mat-hint>
       <mat-error *ngIf="loanReason.errors?.required">Must write something</mat-error>
       <mat-error *ngIf="loanReason.errors?.maxlength">Text is too long</mat-error>
     </mat-form-field>
     <br>
-    <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="submit()">Submit</button>
-    <p class="success" *ngIf="success">Submitted successfully!</p>
+    <button (click)="submit()" [disabled]="form.invalid" color="primary" mat-raised-button>Submit</button>
+    <p *ngIf="success" class="success">Submitted successfully!</p>
     <p class="failure">{{error}}</p>
   </form>
 </div>

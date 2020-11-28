@@ -1,13 +1,13 @@
 <nav>
-  <button mat-button *ngIf="!authService.isAuthenticated()" routerLink="/">Home</button>
-  <button mat-button *ngIf="!authService.isAuthenticated()" routerLink="/login">Login</button>
-  <button mat-button *ngIf="!authService.isAuthenticated()" routerLink="/register">Register</button>
+  <button *ngIf="!authService.isAuthenticated()" mat-button routerLink="/">Home</button>
+  <button *ngIf="!authService.isAuthenticated()" mat-button routerLink="/login">Login</button>
+  <button *ngIf="!authService.isAuthenticated()" mat-button routerLink="/register">Register</button>
 
-  <button mat-button *ngIf="authService.isUser()" routerLink="/user">Your Loans</button>
-  <button mat-button *ngIf="authService.isUser()" routerLink="/user/apply">Apply for Loan</button>
+  <button *ngIf="authService.isUser()" mat-button routerLink="/user">Your Loans</button>
+  <button *ngIf="authService.isUser()" mat-button routerLink="/user/apply">Apply for Loan</button>
 
-  <button mat-button *ngIf="authService.isEmployee()" routerLink="/employee">Loan Applications</button>
+  <button *ngIf="authService.isEmployee()" mat-button routerLink="/employee">Loan Applications</button>
 
-  <button mat-button *ngIf="authService.isAdmin()" routerLink="/admin">Employee Manager</button>
-  <button mat-button *ngIf="authService.isAdmin()" routerLink="/admin/new-employee">Add Employee</button>
+  <button *ngIf="authService.isAdmin()" mat-button routerLink="/admin">Employee Manager</button>
+  <button *ngIf="authService.isAdmin()" mat-button routerLink="/admin/new-employee">Add Employee</button>
 </nav>

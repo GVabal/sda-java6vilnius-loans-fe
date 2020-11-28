@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Loan} from '../../../../interfaces/Loan';
 import {LoanService} from '../../../../services/loan.service';
 import {MatDialog} from '@angular/material/dialog';
@@ -15,7 +15,8 @@ export class ActiveLoansListComponent implements OnInit {
 
   displayedColumns: string[] = ['amountRepay', 'amountPayed', 'repay'];
 
-  constructor(private loanService: LoanService, private dialog: MatDialog) { }
+  constructor(private loanService: LoanService, private dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
     this.getData();
@@ -33,7 +34,6 @@ export class ActiveLoansListComponent implements OnInit {
       data: loan,
     });
   }
-
 
 
 }

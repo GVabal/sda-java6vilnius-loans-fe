@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../../services/employee.service';
-import {AbstractControl, FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserRegisterRequest} from '../../../../interfaces/UserRegisterRequest';
 
 @Component({
@@ -15,7 +15,12 @@ export class AddEmployeeFormComponent implements OnInit {
   error = '';
 
   constructor(private employeeService: EmployeeService,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder) {
+  }
+
+  get email(): AbstractControl {
+    return this.form.get('email');
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -24,10 +29,6 @@ export class AddEmployeeFormComponent implements OnInit {
         Validators.email
       ]]
     });
-  }
-
-  get email(): AbstractControl {
-    return this.form.get('email');
   }
 
   submit(): void {

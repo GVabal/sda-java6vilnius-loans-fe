@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LoginData} from '../../../../interfaces/LoginData';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../../services/auth.service';
@@ -17,7 +17,16 @@ export class LoginFormComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder) {
+  }
+
+  get email(): AbstractControl {
+    return this.form.get('email');
+  }
+
+  get password(): AbstractControl {
+    return this.form.get('password');
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -29,14 +38,6 @@ export class LoginFormComponent implements OnInit {
         Validators.required
       ]]
     });
-  }
-
-  get email(): AbstractControl {
-    return this.form.get('email');
-  }
-
-  get password(): AbstractControl {
-    return this.form.get('password');
   }
 
   login(): void {

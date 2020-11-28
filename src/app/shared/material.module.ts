@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTreeModule} from '@angular/material/tree';
@@ -76,4 +76,5 @@ import {MatDividerModule} from '@angular/material/divider';
     MatTableModule
   ]
 })
-export class MaterialModule { }
+export class MaterialModule {
+}

@@ -3,7 +3,9 @@
     LOANS
     <span class="spacer"></span>
     <span *ngIf="authService.isAuthenticated()" class="untouchable"><mat-icon>account_box</mat-icon></span>
-    <button *ngIf="authService.isAuthenticated()" mat-button (click)="logout()">Logout<mat-icon>logout</mat-icon></button>
+    <button (click)="logout()" *ngIf="authService.isAuthenticated()" mat-button>Logout
+      <mat-icon>logout</mat-icon>
+    </button>
   </mat-toolbar-row>
 
   <mat-toolbar-row class="second-row">

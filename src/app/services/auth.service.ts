@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {AuthResponse} from '../interfaces/AuthResponse';
 import {HttpClient} from '@angular/common/http';
@@ -6,14 +6,15 @@ import {map} from 'rxjs/operators';
 import {LoginData} from '../interfaces/LoginData';
 import {Role} from '../enums/Role';
 import {CustomerRegisterRequest} from '../interfaces/CustomerRegisterRequest';
+import {apiUrl} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private authSubject: BehaviorSubject<AuthResponse>;
   public auth: Observable<AuthResponse>;
+  private authSubject: BehaviorSubject<AuthResponse>;
 
   constructor(private http: HttpClient) {
     this.authSubject = new BehaviorSubject<AuthResponse>(JSON.parse(localStorage.getItem('auth')));
@@ -41,17 +42,22 @@ export class AuthService {
   }
 
   register(customerRegisterRequest: CustomerRegisterRequest): Observable<void> {
-    return this.http.post<void>('http://localhost:8080/api/auth/register', customerRegisterRequest);
+    return this.http.post<void>(apiUrl + 'auth/register', customerRegisterRequest);
   }
 
   login(userLogin: LoginData): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>('http://localhost:8080/api/auth/login', userLogin)
+    return this.http.post<AuthResponse>(apiUrl + 'auth/login', userLogin)
       .pipe(map(auth => this.saveAndReturnAuth(auth)));
   }
 
   refreshToken(): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>('http://localhost:8080/api/auth/refresh-token', {refreshToken: this.authValue.refreshToken})
+    return this.http.post<AuthResponse>(apiUrl + 'auth/refresh-token', {refreshToken: this.authValue.refreshToken})
       .pipe(map(auth => this.saveAndReturnAuth(auth)));
+  }
+
+  logout(): void {
+    localStorage.removeItem('auth');
+    this.authSubject.next(null);
   }
 
   private saveAndReturnAuth(authResponse: AuthResponse): AuthResponse {
@@ -60,10 +66,5 @@ export class AuthService {
       this.authSubject.next(authResponse);
     }
     return authResponse;
-  }
-
-  logout(): void {
-    localStorage.removeItem('auth');
-    this.authSubject.next(null);
   }
 }

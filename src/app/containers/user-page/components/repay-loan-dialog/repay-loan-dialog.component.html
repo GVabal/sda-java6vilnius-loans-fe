@@ -1,20 +1,26 @@
 <h2 mat-dialog-title>Repay Loan</h2>
 <div class="container">
-<mat-dialog-content>
-  <p>Amount to Repay Left: {{loan.amountToRepay}}</p>
-  <p>Amount Payed: {{loan.amountPayed}}</p>
-  <mat-form-field appearance="standard">
-    <mat-label>Repay amount</mat-label>
-    <input matInput type="number" name="amount" [formControl]="form" [(ngModel)]="amount">
-    <mat-error *ngIf="form.errors?.required">This field is required</mat-error>
-    <mat-error *ngIf="form.errors?.min && form.touched">Cannot be 0</mat-error>
-    <mat-error *ngIf="form.errors?.max">Cannot overpay</mat-error>
-  </mat-form-field>
-</mat-dialog-content>
+  <mat-dialog-content>
+    <p>Amount to Repay Left: {{loan.amountToRepay}}</p>
+    <p>Amount Payed: {{loan.amountPayed}}</p>
+    <mat-form-field appearance="standard">
+      <mat-label>Repay amount</mat-label>
+      <input [(ngModel)]="amount" [formControl]="form" matInput name="amount" type="number">
+      <mat-error *ngIf="form.errors?.required">This field is required</mat-error>
+      <mat-error *ngIf="form.errors?.min && form.touched">Cannot be 0</mat-error>
+      <mat-error *ngIf="form.errors?.max">Cannot overpay</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
 </div>
 <mat-dialog-actions>
-  <button mat-button color="primary" (click)="repayLoan()"><mat-icon>payment</mat-icon> Repay</button>
-  <button mat-button color="primary" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+  <button (click)="repayLoan()" color="primary" mat-button>
+    <mat-icon>payment</mat-icon>
+    Repay
+  </button>
+  <button (click)="close()" color="primary" mat-button>
+    <mat-icon>cancel</mat-icon>
+    Close
+  </button>
 </mat-dialog-actions>
-<p class="success" *ngIf="paymentSuccess">Payment done!</p>
-<p class="failure" *ngIf="error.length > 0">{{error}}</p>
+<p *ngIf="paymentSuccess" class="success">Payment done!</p>
+<p *ngIf="error.length > 0" class="failure">{{error}}</p>

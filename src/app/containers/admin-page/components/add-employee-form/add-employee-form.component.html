@@ -1,14 +1,15 @@
-<form class="container" [formGroup]="form">
+<form [formGroup]="form" class="container">
   <mat-form-field appearance="standard">
     <mat-label>Email</mat-label>
-    <input matInput type="email" formControlName="email" required>
+    <input formControlName="email" matInput required type="email">
   </mat-form-field>
   <mat-error *ngIf="email.errors?.required">Email is missing</mat-error>
   <mat-error *ngIf="email.errors?.email">Not an email</mat-error>
   <br>
-  <button mat-raised-button color="primary"
-          [disabled]="form.invalid"
-          (click)="submit()">Add New Employee</button>
-  <p class="success" *ngIf="success">Success!</p>
+  <button (click)="submit()" [disabled]="form.invalid"
+          color="primary"
+          mat-raised-button>Add New Employee
+  </button>
+  <p *ngIf="success" class="success">Success!</p>
   <p class="failure">{{error}}</p>
 </form>

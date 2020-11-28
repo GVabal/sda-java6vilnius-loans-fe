@@ -18,7 +18,8 @@ export class RepayLoanDialogComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<RepayLoanDialogComponent>,
               private paymentService: PaymentService,
-              @Inject(MAT_DIALOG_DATA) public loan: Loan) { }
+              @Inject(MAT_DIALOG_DATA) public loan: Loan) {
+  }
 
   ngOnInit(): void {
     this.form = new FormControl(

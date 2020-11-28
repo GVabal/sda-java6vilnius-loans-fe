@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoanApplicationRequest} from '../../../../interfaces/LoanApplicationRequest';
 import {LoanApplicationService} from '../../../../services/loan-application.service';
@@ -18,6 +18,18 @@ export class LoanApplicationFormComponent implements OnInit {
               private fb: FormBuilder) {
   }
 
+  get amount(): AbstractControl {
+    return this.form.get('amount');
+  }
+
+  get termMonths(): AbstractControl {
+    return this.form.get('termMonths');
+  }
+
+  get loanReason(): AbstractControl {
+    return this.form.get('loanReason');
+  }
+
   ngOnInit(): void {
     this.form = this.fb.group({
       amount: [100, [
@@ -35,18 +47,6 @@ export class LoanApplicationFormComponent implements OnInit {
         Validators.maxLength(188)
       ]]
     });
-  }
-
-  get amount(): AbstractControl {
-    return this.form.get('amount');
-  }
-
-  get termMonths(): AbstractControl {
-    return this.form.get('termMonths');
-  }
-
-  get loanReason(): AbstractControl {
-    return this.form.get('loanReason');
   }
 
   submit(): void {

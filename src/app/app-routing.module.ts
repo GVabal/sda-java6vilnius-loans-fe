@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {LoginPageComponent} from './containers/login-page/login-page.component';
 import {UserPageComponent} from './containers/user-page/user-page.component';
 import {EmployeePageComponent} from './containers/employee-page/employee-page.component';
@@ -64,4 +64,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

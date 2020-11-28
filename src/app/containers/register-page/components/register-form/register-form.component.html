@@ -1,29 +1,29 @@
-<form class="container" [formGroup]="form">
+<form [formGroup]="form" class="container">
   <h2>Register</h2>
   <mat-form-field appearance="standard">
     <mat-label>Enter your first name</mat-label>
-    <input matInput formControlName="firstName" type="text" required>
+    <input formControlName="firstName" matInput required type="text">
     <mat-error *ngIf="firstName.errors?.required">Must provide name</mat-error>
     <mat-error *ngIf="firstName.errors?.pattern">Is this really a name?</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="standard">
     <mat-label>Enter your last name</mat-label>
-    <input matInput formControlName="lastName" type="text" required>
+    <input formControlName="lastName" matInput required type="text">
     <mat-error *ngIf="firstName.errors?.required">Must provide name</mat-error>
     <mat-error *ngIf="firstName.errors?.pattern">Is this really a name?</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="standard">
     <mat-label>Enter your email</mat-label>
-    <input matInput formControlName="email" type="email" required>
+    <input formControlName="email" matInput required type="email">
     <mat-error *ngIf="email.errors?.required">Email is missing</mat-error>
     <mat-error *ngIf="email.errors?.email">Not an email</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="standard">
     <mat-label>Enter your password</mat-label>
-    <input matInput formControlName="password" type="password" required>
+    <input formControlName="password" matInput required type="password">
     <mat-hint align="end">Has to be at least 10 characters long.</mat-hint>
     <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
     <mat-error *ngIf="password.errors?.minlength">Password is too short</mat-error>
@@ -31,15 +31,15 @@
   <br>
   <mat-form-field appearance="standard">
     <mat-label>Enter your bank account number</mat-label>
-    <input matInput formControlName="bankAccountNumber" type="text" required>
+    <input formControlName="bankAccountNumber" matInput required type="text">
     <mat-hint align="end">Consists of two letters and 8-12 digits.</mat-hint>
     <mat-error *ngIf="bankAccountNumber.errors?.required">Password is required</mat-error>
     <mat-error *ngIf="bankAccountNumber.errors?.pattern">Invalid number</mat-error>
   </mat-form-field>
   <br>
-  <button mat-raised-button color="primary"
-          [disabled]="isLoading || form.invalid"
-          (click)="register()">{{isLoading ? 'Loading...' : 'Register!'}}</button>
-  <p class="success" *ngIf="isRegisterSuccessful">Registration complete!</p>
-  <p class="failure" *ngIf="!isRegisterSuccessful">{{error}}</p>
+  <button (click)="register()" [disabled]="isLoading || form.invalid"
+          color="primary"
+          mat-raised-button>{{isLoading ? 'Loading...' : 'Register!'}}</button>
+  <p *ngIf="isRegisterSuccessful" class="success">Registration complete!</p>
+  <p *ngIf="!isRegisterSuccessful" class="failure">{{error}}</p>
 </form>

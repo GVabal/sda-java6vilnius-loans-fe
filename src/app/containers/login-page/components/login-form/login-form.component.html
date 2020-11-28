@@ -1,20 +1,20 @@
-<form class="container" [formGroup]="form">
+<form [formGroup]="form" class="container">
   <h2>Login</h2>
   <mat-form-field appearance="standard">
     <mat-label>Enter your email</mat-label>
-    <input matInput type="email" formControlName="email" required>
+    <input formControlName="email" matInput required type="email">
     <mat-error *ngIf="email.errors?.required">Email is missing</mat-error>
     <mat-error *ngIf="email.errors?.email">Not an email</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="standard">
     <mat-label>Enter your password</mat-label>
-    <input matInput type="password" formControlName="password" required>
+    <input formControlName="password" matInput required type="password">
     <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
   </mat-form-field>
   <br>
-  <button mat-raised-button color="primary"
-          [disabled]="isLoading || form.invalid"
-          (click)="login()">{{isLoading ? 'Loading...' : 'Login!'}}</button>
-  <p class="failure" *ngIf="loginFailed">Login failed</p>
+  <button (click)="login()" [disabled]="isLoading || form.invalid"
+          color="primary"
+          mat-raised-button>{{isLoading ? 'Loading...' : 'Login!'}}</button>
+  <p *ngIf="loginFailed" class="failure">Login failed</p>
 </form>
