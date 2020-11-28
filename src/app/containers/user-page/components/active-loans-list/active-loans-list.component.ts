@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Loan} from '../../../../interfaces/Loan';
 import {LoanService} from '../../../../services/loan.service';
-import {PaymentService} from '../../../../services/payment.service';
+import {MatDialog} from '@angular/material/dialog';
+import {RepayLoanDialogComponent} from '../repay-loan-dialog/repay-loan-dialog.component';
 
 @Component({
   selector: 'app-active-loans-list',
@@ -10,16 +11,11 @@ import {PaymentService} from '../../../../services/payment.service';
 })
 export class ActiveLoansListComponent implements OnInit {
 
-  selectedLoan: Loan;
-  amount: number;
   loans: Loan[] = [];
-  displayPaymentWindow = false;
-  paymentSuccess = false;
 
   displayedColumns: string[] = ['amountRepay', 'amountPayed', 'repay'];
 
-  constructor(private loanService: LoanService,
-              private paymentService: PaymentService) { }
+  constructor(private loanService: LoanService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getData();
@@ -31,21 +27,13 @@ export class ActiveLoansListComponent implements OnInit {
     });
   }
 
-  openRepayWindowForLoan(loan: Loan): void {
-    this.displayPaymentWindow = true;
-    this.selectedLoan = loan;
+  openRepayLoanDialog(loan: Loan): void {
+    this.dialog.open(RepayLoanDialogComponent, {
+      width: '300px',
+      data: loan,
+    });
   }
 
-  closeRepayWindowForLoan(): void {
-    this.displayPaymentWindow = false;
-    window.location.reload();
-  }
 
-  repayLoan(id: number, amount: number): void {
-    this.paymentService.payBackLoan(id, amount).subscribe(() => this.paymentSuccess = true);
-    this.selectedLoan.amountPayed += amount;
-    this.selectedLoan.amountToRepay -= amount;
-    this.amount = null;
-  }
 
 }

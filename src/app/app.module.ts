@@ -26,6 +26,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RegisterPageComponent } from './containers/register-page/register-page.component';
 import {RegisterFormComponent} from './containers/register-page/components/register-form/register-form.component';
+import { RepayLoanDialogComponent } from './containers/user-page/components/repay-loan-dialog/repay-loan-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {RegisterFormComponent} from './containers/register-page/components/regis
     NavigationComponent,
     RegisterPageComponent,
     RegisterFormComponent,
+    RepayLoanDialogComponent,
   ],
   imports: [
     BrowserModule,
