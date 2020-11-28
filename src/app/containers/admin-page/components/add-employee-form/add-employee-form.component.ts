@@ -38,6 +38,7 @@ export class AddEmployeeFormComponent implements OnInit {
     };
     this.employeeService.addEmployee(request).subscribe(() => {
       this.success = true;
+      this.error = '';
     }, error => {
       this.error = error;
     });
