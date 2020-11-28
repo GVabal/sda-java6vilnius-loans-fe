@@ -3,7 +3,7 @@
     <mat-label>Email</mat-label>
     <input formControlName="email" matInput required type="email">
   </mat-form-field>
-  <mat-error *ngIf="email.errors?.required">Email is missing</mat-error>
+  <mat-error *ngIf="email.errors?.required && email.touched">Email is missing</mat-error>
   <mat-error *ngIf="email.errors?.email">Not an email</mat-error>
   <br>
   <button (click)="submit()" [disabled]="form.invalid"
