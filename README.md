@@ -9,7 +9,7 @@ Angular 10.2.0, Angular Material 11.0.1
 
 ### Run this application locally in development mode:
 
-Requires Node.js. After downloading the project, run `npm install` to install needed libraries, then `npm start` to run application. Navigate to http://localhost:4200.
+Requires back-end service mentioned above. Requires Node. After downloading the project, run `npm install` to install needed libraries, then `npm start` to run application. Navigate to http://localhost:4200.
 
 You can log in with one of the demo accounts to start:
 ```
