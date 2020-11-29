@@ -44,11 +44,11 @@ export class RegisterFormComponent implements OnInit {
     this.form = this.fb.group({
       firstName: ['', [
         Validators.required,
-        Validators.pattern(/^\w{2,}$/i)
+        Validators.pattern(/^{L}{2,}$/i)
       ]],
       lastName: ['', [
         Validators.required,
-        Validators.pattern(/^\w{2,}$/i)
+        Validators.pattern(/^{L}{2,}$/i)
       ]],
       email: ['', [
         Validators.required,
