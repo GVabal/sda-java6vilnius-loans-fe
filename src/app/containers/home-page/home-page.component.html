@@ -1,15 +1,147 @@
-<div *ngIf="!authService.isAuthenticated()">
-  <mat-card>
-    <mat-card-title>
-      Unforeseen expenses can happen for everyone
-    </mat-card-title>
-    <mat-card-content>
-      <p>
-        aprasyti info apie savo projekta
-      </p>
-    </mat-card-content>
-  </mat-card>
-</div>
+<mat-grid-list *ngIf="!authService.isAuthenticated()" cols="3" rowHeight="30%">
+  <mat-grid-tile colspan="2" rowspan="2">
+    <mat-card style="background-color: aquamarine">
+      <div class="spacer"></div>
+      <mat-card-title>
+        <h1>Unforeseen expenses</h1>
+        <h1>can happen for everyone</h1>
+      </mat-card-title>
+      <mat-card-content>
+        <p>
+          Application that very (very) naively imitates the process of taking and paying back a loan.
+          Customers register on the website, where they can apply for a loan, manage currently active
+          loans. Employees can approve or reject loan applications. Admin can manage the employees.
+          You can start by logging in with one of the pre-made users:
+        </p>
+        <table>
+          <tr>
+            <th>Login</th>
+            <th>Password</th>
+          </tr>
+          <tr>
+            <td>customer@email.com</td>
+            <td>password</td>
+          </tr>
+          <tr>
+            <td>employee@email.com</td>
+            <td>password</td>
+          </tr>
+          <tr>
+            <td>admin@email.com</td>
+            <td>password</td>
+          </tr>
+        </table>
+        <img src="../../../assets/young-people-travelling.jpg"
+             alt="young people travelling, standing together looking at the map">
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="1">
+    <mat-card style="background-color: salmon">
+      <div class="spacer"></div>
+      <mat-card-title>
+        <h2>This might be interesting</h2>
+      </mat-card-title>
+      <mat-card-content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore et hic
+          iure laborum magnam quo quod temporibus voluptas voluptates? Atque deserunt
+          iusto libero nam recusandae soluta tenetur? Assumenda, facere in nostrum quaerat
+          qui quibusdam quos. Adipisci alias atque harum laudantium magnam neque nostrum,
+          placeat, provident quaerat quidem repudiandae voluptate!
+        </p>
+        <button mat-raised-button>Find out more!</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="1">
+    <mat-card style="background-color: bisque">
+      <div class="spacer"></div>
+      <mat-card-title>
+        <h2>Something great is happening</h2>
+      </mat-card-title>
+      <mat-card-content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias
+          atque, debitis dolores doloribus, enim, eos itaque magnam minima placeat provident
+          quia sunt suscipit ullam!
+        </p>
+        <button mat-raised-button>Find out more!</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="1">
+    <mat-card style="background-color: coral">
+      <div class="spacer"></div>
+      <mat-card-title>
+        <h2>Wouldn't you want this?</h2>
+      </mat-card-title>
+      <mat-card-content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+          asperiores beatae debitis ducimus eligendi ex expedita facilis incidunt ipsa
+          iusto labore libero maxime minima modi molestiae natus nihil nostrum numquam
+          odio odit officiis, perferendis, quidem quis quisquam similique sint sit suscipit
+          temporibus tenetur ut velit voluptatem voluptates! Necessitatibus, porro.
+        </p>
+        <button mat-raised-button>Find out more!</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2" rowspan="2">
+    <mat-card style="background-color: deepskyblue">
+      <div class="spacer"></div>
+      <mat-card-title>
+        <h1>Happy family jumping</h1>
+        <h1>together. Look at them!</h1>
+      </mat-card-title>
+      <mat-card-content>
+        <img src="../../../assets/happy-people-in-nature.jpg"
+             alt="happy people in nature jumping together while looking at the sun">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem cumque
+          doloremque eos, exercitationem fugit magnam molestiae numquam optio, quaerat quam
+          quibusdam reprehenderit sequi tenetur ut. Ab quasi, voluptate. Accusantium delectus
+          doloribus ea est excepturi explicabo molestias natus nemo odio, qui quisquam quod
+          tempora velit. Ad alias aliquam assumenda consequuntur cum ducimus eos est hic illo
+          in incidunt ipsam iusto laboriosam, libero maxime neque nobis optio perferendis
+          provident quae quaerat quibusdam repellat reprehenderit sequi veniam voluptate
+          voluptatem voluptatibus? Alias animi beatae debitis deserunt est et, id, in
+          incidunt minima modi molestiae molestias perferendis quam quas quia quos sit ullam unde.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at beatae
+          corporis enim esse et omnis sequi tempora vel voluptatem. Amet culpa delectus
+          nobis voluptates?
+        </p>
+        <button mat-raised-button>Find out more!</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1" rowspan="1">
+    <mat-card style="background-color: aliceblue">
+      <div class="spacer"></div>
+      <mat-card-title>
+        <h2>Unforeseen expenses can happen for everyone</h2>
+      </mat-card-title>
+      <mat-card-content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam
+          asperiores, consequuntur corporis ea eos illum ipsa labore magni nihil officia,
+          officiis perferendis, quas recusandae rem repellendus sequi tenetur ut vero
+          voluptate! Ad architecto, asperiores aspernatur autem culpa cum deleniti excepturi
+          ipsa libero magni quas repellendus sit ut veritatis vero.
+        </p>
+        <button mat-raised-button>Find out more!</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
 
 <div *ngIf="authService.isAuthenticated()">
   <mat-spinner></mat-spinner>
