@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,17 @@ import {Router} from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(public authService: AuthService, private router: Router) {
+  isScreenSmall: boolean;
+
+  constructor(public authService: AuthService, private router: Router, private breakpointObserver: BreakpointObserver) {
   }
 
   ngOnInit(): void {
+    this.breakpointObserver
+      .observe([Breakpoints.XSmall])
+      .subscribe((state: BreakpointState) => {
+        this.isScreenSmall = state.matches;
+      });
   }
 
   redirect(): void {
