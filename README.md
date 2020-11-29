@@ -19,19 +19,19 @@ customer@email.com  | password
 employee@email.com  | password
 admin@email.com     | password
 ```
-<img src="https://user-images.githubusercontent.com/49102436/100538594-60978700-3239-11eb-9d03-4a7a3d863960.png" width="500">
-<img src="https://user-images.githubusercontent.com/49102436/100538592-5f665a00-3239-11eb-80ea-8633005f7e56.png" width="500">
+<img src="https://user-images.githubusercontent.com/49102436/100538594-60978700-3239-11eb-9d03-4a7a3d863960.png" width="550">
+<img src="https://user-images.githubusercontent.com/49102436/100538592-5f665a00-3239-11eb-80ea-8633005f7e56.png" width="550">
 
 Customers can see their active and pending loans, apply for new loan:
 
-<img src="https://user-images.githubusercontent.com/49102436/100538595-62614a80-3239-11eb-93eb-37243075697a.png" width="500">
-<img src="https://user-images.githubusercontent.com/49102436/100538599-62f9e100-3239-11eb-85f2-965f4d847b8a.png" width="500">
-<img src="https://user-images.githubusercontent.com/49102436/100538597-62f9e100-3239-11eb-9752-c536f14b10b6.png" width="500">
+<img src="https://user-images.githubusercontent.com/49102436/100538595-62614a80-3239-11eb-93eb-37243075697a.png" width="550">
+<img src="https://user-images.githubusercontent.com/49102436/100538599-62f9e100-3239-11eb-85f2-965f4d847b8a.png" width="550">
+<img src="https://user-images.githubusercontent.com/49102436/100538597-62f9e100-3239-11eb-9752-c536f14b10b6.png" width="550">
 
 Employees can approve or reject loan applications:
 
-<img src="https://user-images.githubusercontent.com/49102436/100538600-62f9e100-3239-11eb-9cdf-e78ed57c5dad.png" width="500">
+<img src="https://user-images.githubusercontent.com/49102436/100538600-62f9e100-3239-11eb-9cdf-e78ed57c5dad.png" width="550">
 
 Admin can manage employees:
 
-<img src="https://user-images.githubusercontent.com/49102436/100538596-62614a80-3239-11eb-81ca-e7e544cec2b2.png" width="500">
+<img src="https://user-images.githubusercontent.com/49102436/100538596-62614a80-3239-11eb-81ca-e7e544cec2b2.png" width="550">
