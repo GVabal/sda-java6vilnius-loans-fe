@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
   template: `
     <app-pending-loans-list></app-pending-loans-list>
   `,
-  styleUrls: ['./employee-page.component.css']
+  styles: []
 })
 export class EmployeePageComponent implements OnInit {
 
