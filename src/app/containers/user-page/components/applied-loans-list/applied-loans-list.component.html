@@ -12,6 +12,11 @@
       <td *matCellDef="let loan" mat-cell> {{loan.status}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="timestamp">
+      <th *matHeaderCellDef mat-header-cell> Date and Time applied</th>
+      <td *matCellDef="let loan" mat-cell> {{loan.datetimeApplied | date:'yyyy-MM-dd hh:mm:ss'}} </td>
+    </ng-container>
+
     <ng-container matColumnDef="action">
       <th *matHeaderCellDef mat-header-cell> Action</th>
       <td *matCellDef="let loan" mat-cell>

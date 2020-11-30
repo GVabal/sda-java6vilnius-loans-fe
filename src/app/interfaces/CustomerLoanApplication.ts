@@ -7,4 +7,5 @@ export interface CustomerLoanApplication {
   interestRatePerYear: number;
   loanReason: string;
   status: ApplicationStatus;
+  datetimeApplied: Date;
 }

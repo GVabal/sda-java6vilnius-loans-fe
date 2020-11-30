@@ -10,7 +10,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class AppliedLoansListComponent implements OnInit {
 
-  displayedColumns: string[] = ['amount', 'status', 'action'];
+  displayedColumns: string[] = ['amount', 'status', 'timestamp', 'action'];
   appliedLoans: MatTableDataSource<CustomerLoanApplication>;
 
 

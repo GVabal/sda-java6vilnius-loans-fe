@@ -9,19 +9,21 @@
 
   <table [dataSource]="dataSource" mat-table matSort>
 
-    <!-- Position Column -->
     <ng-container matColumnDef="amount">
       <th *matHeaderCellDef mat-header-cell mat-sort-header> Amount</th>
       <td *matCellDef="let loan" mat-cell> {{loan.amount}} </td>
     </ng-container>
 
-    <!-- Title Column -->
     <ng-container matColumnDef="name">
       <th *matHeaderCellDef mat-header-cell mat-sort-header> Name</th>
       <td *matCellDef="let loan" mat-cell> {{loan.customer.firstName}} {{loan.customer.lastName}} </td>
     </ng-container>
 
-    <!-- Date Column -->
+    <ng-container matColumnDef="timestamp">
+      <th *matHeaderCellDef mat-header-cell> Date and Time applied</th>
+      <td *matCellDef="let loan" mat-cell> {{loan.datetimeApplied | date:'yyyy-MM-dd hh:mm:ss'}} </td>
+    </ng-container>
+
     <ng-container matColumnDef="details">
       <th *matHeaderCellDef mat-header-cell mat-sort-header> Details</th>
       <td *matCellDef="let loan" mat-cell>

@@ -6,6 +6,7 @@
   <p>Interest Rate per Year: {{loan.interestRatePerYear}}</p>
   <p>Term Months: {{loan.termMonths}}</p>
   <p>Reason: {{loan.loanReason}}</p>
+  <p>Application date: {{loan.datetimeApplied | date:'yyyy-MM-dd hh:mm:ss'}}</p>
   <button (click)="approveLoan(loan.id)" color="primary" mat-button>Approve</button>
   <button (click)="rejectLoan(loan.id)" color="primary" mat-button>Reject</button>
   <p *ngIf="showSubmitMessage">Application processed!</p>

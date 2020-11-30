@@ -7,4 +7,5 @@ export interface EmployeeLoanApplication {
   interestRatePerYear: number;
   loanReason: string;
   customer: Customer;
+  datetimeApplied: Date;
 }

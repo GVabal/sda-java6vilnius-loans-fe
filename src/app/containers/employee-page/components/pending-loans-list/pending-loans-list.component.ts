@@ -17,7 +17,7 @@ export class PendingLoansListComponent implements OnInit, AfterViewInit {
   selectedLoan: EmployeeLoanApplication;
 
   dataSource: MatTableDataSource<EmployeeLoanApplication>;
-  displayedColumns: string[] = ['amount', 'name', 'details'];
+  displayedColumns: string[] = ['amount', 'name', 'timestamp', 'details'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
