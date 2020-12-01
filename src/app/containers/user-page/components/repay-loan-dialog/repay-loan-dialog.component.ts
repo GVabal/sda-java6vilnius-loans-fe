@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {PaymentService} from '../../../../services/payment.service';
-import {Loan} from '../../../../interfaces/Loan';
+import {Loan} from '../../../../interfaces/models/Loan';
 import {FormControl, Validators} from '@angular/forms';
 
 @Component({

@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Employee} from '../interfaces/Employee';
-import {UserRegisterRequest} from '../interfaces/UserRegisterRequest';
+import {Employee} from '../interfaces/models/Employee';
+import {UserRegisterRequest} from '../interfaces/payloads/UserRegisterRequest';
 import {apiUrl} from '../../environments/environment';
 
 @Injectable({

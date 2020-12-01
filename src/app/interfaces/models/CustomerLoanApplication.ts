@@ -1,4 +1,4 @@
-import {ApplicationStatus} from '../enums/ApplicationStatus';
+import {ApplicationStatus} from '../../enums/ApplicationStatus';
 
 export interface CustomerLoanApplication {
   id: number;

@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {EmployeeLoanApplication} from '../../../../interfaces/EmployeeLoanApplication';
+import {EmployeeLoanApplication} from '../../../../interfaces/models/EmployeeLoanApplication';
 import {LoanApplicationService} from '../../../../services/loan-application.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';

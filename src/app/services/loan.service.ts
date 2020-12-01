@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Loan} from '../interfaces/Loan';
+import {Loan} from '../interfaces/models/Loan';
 import {apiUrl} from '../../environments/environment';
 
 @Injectable({

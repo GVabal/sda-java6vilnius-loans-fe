@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {EmployeeLoanApplication} from '../../../../interfaces/EmployeeLoanApplication';
+import {EmployeeLoanApplication} from '../../../../interfaces/models/EmployeeLoanApplication';
 import {LoanApplicationService} from '../../../../services/loan-application.service';
 
 @Component({

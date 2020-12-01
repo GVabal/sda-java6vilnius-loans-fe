@@ -1,4 +1,4 @@
-import {EmployeeStatus} from '../enums/EmployeeStatus';
+import {EmployeeStatus} from '../../enums/EmployeeStatus';
 
 export interface Employee {
   id: number;

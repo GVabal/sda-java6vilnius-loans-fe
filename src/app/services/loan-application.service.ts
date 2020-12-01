@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {CustomerLoanApplication} from '../interfaces/CustomerLoanApplication';
-import {EmployeeLoanApplication} from '../interfaces/EmployeeLoanApplication';
-import {LoanApplicationRequest} from '../interfaces/LoanApplicationRequest';
+import {CustomerLoanApplication} from '../interfaces/models/CustomerLoanApplication';
+import {EmployeeLoanApplication} from '../interfaces/models/EmployeeLoanApplication';
+import {LoanApplicationRequest} from '../interfaces/payloads/LoanApplicationRequest';
 import {apiUrl} from '../../environments/environment';
 
 @Injectable({

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {PaymentRequest} from '../interfaces/PaymentRequest';
+import {PaymentRequest} from '../interfaces/payloads/PaymentRequest';
 import {apiUrl} from '../../environments/environment';
 
 @Injectable({

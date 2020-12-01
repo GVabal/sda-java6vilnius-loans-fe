@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../../../services/auth.service';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CustomerRegisterRequest} from '../../../../interfaces/CustomerRegisterRequest';
+import {CustomerRegisterRequest} from '../../../../interfaces/payloads/CustomerRegisterRequest';
 
 @Component({
   selector: 'app-register-form',

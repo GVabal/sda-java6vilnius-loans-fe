@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CustomerLoanApplication} from '../../../../interfaces/CustomerLoanApplication';
+import {CustomerLoanApplication} from '../../../../interfaces/models/CustomerLoanApplication';
 import {LoanApplicationService} from '../../../../services/loan-application.service';
 import {MatTableDataSource} from '@angular/material/table';
 

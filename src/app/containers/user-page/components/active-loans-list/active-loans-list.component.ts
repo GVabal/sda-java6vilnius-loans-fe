@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Loan} from '../../../../interfaces/Loan';
+import {Loan} from '../../../../interfaces/models/Loan';
 import {LoanService} from '../../../../services/loan.service';
 import {MatDialog} from '@angular/material/dialog';
 import {RepayLoanDialogComponent} from '../repay-loan-dialog/repay-loan-dialog.component';

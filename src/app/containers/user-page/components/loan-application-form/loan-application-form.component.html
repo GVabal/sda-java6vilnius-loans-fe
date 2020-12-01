@@ -20,6 +20,20 @@
     </mat-form-field>
     <br>
     <mat-form-field appearance="standard">
+      <mat-label>Income per month</mat-label>
+      <input formControlName="monthlyIncome" matInput required type="number">
+      <mat-error *ngIf="termMonths.errors?.required">Must provide</mat-error>
+      <mat-error *ngIf="termMonths.errors?.min">Cannot be negative</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Liabilities per month</mat-label>
+      <input formControlName="monthlyLiabilities" matInput required type="number">
+      <mat-error *ngIf="termMonths.errors?.required">Must provide</mat-error>
+      <mat-error *ngIf="termMonths.errors?.min">Cannot be negative</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
       <mat-label>Reason for taking the loan</mat-label>
       <textarea formControlName="loanReason" matInput required type="text"></textarea>
       <mat-hint align="end">Maximum 188 characters</mat-hint>

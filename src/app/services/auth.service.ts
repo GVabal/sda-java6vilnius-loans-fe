@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {AuthResponse} from '../interfaces/AuthResponse';
+import {AuthResponse} from '../interfaces/payloads/AuthResponse';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import {LoginData} from '../interfaces/LoginData';
+import {LoginData} from '../interfaces/payloads/LoginData';
 import {Role} from '../enums/Role';
-import {CustomerRegisterRequest} from '../interfaces/CustomerRegisterRequest';
+import {CustomerRegisterRequest} from '../interfaces/payloads/CustomerRegisterRequest';
 import {apiUrl} from '../../environments/environment';
 
 @Injectable({

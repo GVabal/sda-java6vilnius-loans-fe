@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../../services/employee.service';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UserRegisterRequest} from '../../../../interfaces/UserRegisterRequest';
+import {UserRegisterRequest} from '../../../../interfaces/payloads/UserRegisterRequest';
 
 @Component({
   selector: 'app-add-employee-form',
