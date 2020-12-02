@@ -43,7 +43,8 @@ export class LoanApplicationFormComponent implements OnInit {
       amount: [100, [
         Validators.required,
         Validators.min(100),
-        Validators.max(15000)
+        Validators.max(15000),
+        Validators.pattern(/^\d+$/)
       ]],
       termMonths: [6, [
         Validators.required,
