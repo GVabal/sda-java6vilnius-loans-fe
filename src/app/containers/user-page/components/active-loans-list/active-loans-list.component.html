@@ -2,12 +2,12 @@
   <table [dataSource]="loans" mat-table>
     <ng-container matColumnDef="amountRepay">
       <th *matHeaderCellDef mat-header-cell> Amount to Repay Left</th>
-      <td *matCellDef="let loan" mat-cell> {{loan.amountToRepay}} </td>
+      <td *matCellDef="let loan" mat-cell> {{loan.amountToRepay}} &#8364;</td>
     </ng-container>
 
     <ng-container matColumnDef="amountPayed">
       <th *matHeaderCellDef mat-header-cell> Amount Payed</th>
-      <td *matCellDef="let loan" mat-cell> {{loan.amountPayed}} </td>
+      <td *matCellDef="let loan" mat-cell> {{loan.amountPayed}} &#8364;</td>
     </ng-container>
 
     <ng-container matColumnDef="repay">
