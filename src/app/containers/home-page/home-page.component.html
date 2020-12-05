@@ -1,5 +1,5 @@
 <mat-grid-list *ngIf="!authService.isAuthenticated()" cols="{{isScreenSmall ? 1 : 3}}"
-               rowHeight="30%">
+               rowHeight="{{isScreenSmall ? '27%' : '30%'}}">
   <mat-grid-tile colspan="{{isScreenSmall ? 1 : 2}}" rowspan="2">
     <mat-card style="background-color: aquamarine">
       <div class="spacer"></div>

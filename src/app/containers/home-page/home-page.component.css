@@ -13,13 +13,11 @@ mat-card-title {
 mat-card-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 img {
-  height: 250px;
+  max-width: 100%;
   margin-top: 3em;
-  margin-bottom: 3em;
 }
 
 .spacer {
@@ -36,4 +34,6 @@ h2 {
 
 table, th, td {
   border: 1px solid black;
+  width: 200px;
+  margin: 0 auto;
 }
