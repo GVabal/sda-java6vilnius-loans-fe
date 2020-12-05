@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {PaymentService} from '../../../../services/payment.service';
 import {Loan} from '../../../../interfaces/models/Loan';
-import {FormControl, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-repay-loan-dialog',
@@ -12,22 +12,27 @@ import {FormControl, Validators} from '@angular/forms';
 export class RepayLoanDialogComponent implements OnInit {
 
   paymentSuccess = false;
-  amount: number;
   error = '';
-  form: FormControl;
+  form: FormGroup;
 
   constructor(private dialogRef: MatDialogRef<RepayLoanDialogComponent>,
+              private fb: FormBuilder,
               private paymentService: PaymentService,
               @Inject(MAT_DIALOG_DATA) public loan: Loan) {
   }
 
+  get amount(): AbstractControl {
+    return this.form.get('amount');
+  }
+
   ngOnInit(): void {
-    this.form = new FormControl(
-      0, [
+    this.form = this.fb.group({
+      amount: [null, [
         Validators.required,
         Validators.min(0.01),
         Validators.max(this.loan.amountToRepay)
-      ]);
+      ]]
+    });
   }
 
   close(): void {
@@ -35,10 +40,10 @@ export class RepayLoanDialogComponent implements OnInit {
   }
 
   repayLoan(): void {
-    this.paymentService.payBackLoan(this.loan.id, this.amount).subscribe(() => {
+    this.paymentService.payBackLoan(this.loan.id, this.amount.value).subscribe(() => {
       this.paymentSuccess = true;
-      this.loan.amountToRepay -= this.amount;
-      this.loan.amountPayed += this.amount;
+      this.loan.amountToRepay -= this.amount.value;
+      this.loan.amountPayed += this.amount.value;
       this.form.reset();
     }, error => {
       this.error = error;
